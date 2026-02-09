@@ -16,6 +16,8 @@ export class Renderer {
     this.renderer = new THREE.WebGLRenderer({ antialias });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setPixelRatio(pixelRatio);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     
     this.container.appendChild(this.renderer.domElement);
   }
